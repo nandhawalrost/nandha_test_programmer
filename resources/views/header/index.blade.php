@@ -24,8 +24,8 @@
               Purchase Order
             </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="nav/purchase_order">Buat PO</a></li>
-              <li><a class="dropdown-item" href="/purchase_order/list">List PO</a></li>
+              <li><a class="dropdown-item" href="/nav/purchase_order">Buat PO</a></li>
+              <li><a class="dropdown-item" href="/nav/list_purchase_order">List PO</a></li>
           </ul>
 
           <li class="nav-item dropdown active">

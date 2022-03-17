@@ -1,5 +1,4 @@
 @include('header.index')
-
 @if($data_t_po->isEmpty())
 
 @if ($errors->any())
@@ -12,26 +11,13 @@
     </div>
 @endif
 
-<div class="container-sm">
-    <div class="form-group row">
-        <div class="col-sm-12">
-        <center><label>Silahkan tekan tombol "Buat PO Baru" untuk memulai.</label></center>
-        <form action = "/nav/purchase_order/buat_po_baru" method="POST">
-        {{csrf_field()}}
-        <button type="submit" class="btn btn-dark btn-lg btn-block">Buat PO Baru</button>
-        </form>
-        </div>
-    </div>
-</div>
-
 @else
 
-<form class="form" action="/nav/purchase_order/store_purchase_order" method="POST">
+@foreach($data_t_po as $t_po)
+<form class="form" action="/nav/list_purchase_order/{{$t_po->id}}/lihat_detail_po/store_purchase_order" method="POST">
 
   {{csrf_field()}}    
 
-
-@foreach($data_t_po as $t_po)
 <div class="container-sm">
 <h3><b>ID PO: {{$t_po->id}}</b></h3>
 <h3><b>KD PO: {{$t_po->kode_po}}</b></h3>
@@ -134,10 +120,10 @@
             <td align="right">{{$t_po_detail->harga_satuan}}</td>
             <td align="right">{{$t_po_detail->harga_satuan*$t_po_detail->qty}}</td>
             <td>
-              <a href="/nav/purchase_order/{{$t_po_detail->id}}/destroy_detail">Hapus</a>
+              <a href="/nav/list_purchase_order/{{$t_po_detail->id}}/lihat_detail_po/destroy_detail">Hapus</a>
             </td>
             <td>
-              <a href="/nav/purchase_order/{{$t_po_detail->id}}/edit_detail">Edit</a>
+              <a href="/nav/list_purchase_order/{{$t_po_detail->id}}/lihat_detail_po/edit_detail">Edit</a>
             </td>
           </tr>
           @endforeach
@@ -208,17 +194,6 @@
         <form action = "/nav/print_out/{{$t_po->id}}/cetak_po" method="GET">
         {{csrf_field()}} 
         <button type="submit" class="btn btn-dark btn-lg btn-block">Cetak</button>
-        </form>
-        </div>
-    </div>
-</div>
-
-<div class="container-sm">
-    <div class="form-group row">
-        <div class="col-sm-12">
-        <form action = "/nav/purchase_order/buat_purchase_order_baru" method="POST">
-        {{csrf_field()}}
-        <button type="submit" class="btn btn-dark btn-lg btn-block">Buat PO Baru</button>
         </form>
         </div>
     </div>

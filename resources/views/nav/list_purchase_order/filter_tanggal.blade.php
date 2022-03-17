@@ -35,15 +35,15 @@
           <th></th>
         </thead>
         <tbody>
-          @foreach($data_t_po as $t_po)
+          @foreach($filter_tanggal as $filter)
           <tr>
-            <td>{{$t_po->id}}</td>
-            <td>{{$t_po->kode_po}}</td>
-            <td>{{$t_po->tanggal_po}}</td>
-            <td>{{$t_po->nama_supplier_atau_vendor}}</td>
-            <td>{{$t_po->cara_bayar}}</td>
+            <td>{{$filter->id}}</td>
+            <td>{{$filter->kode_po}}</td>
+            <td>{{$filter->tanggal_po}}</td>
+            <td>{{$filter->nama_supplier_atau_vendor}}</td>
+            <td>{{$filter->cara_bayar}}</td>
             <td>
-              <a href="/nav/list_purchase_order/{{$t_po->id}}/lihat_detail_po">Lihat Detail</a>
+              <a href="/nav/list_purchase_order/{{$filter->id}}/lihat_detail_po">Lihat Detail</a>
             </td>
           </tr>
           @endforeach
