@@ -199,6 +199,17 @@
     </div>
 </div>
 
+<div class="container-sm">
+    <div class="form-group row">
+        <div class="col-sm-12">
+        <form action = "/nav/list_purchase_order/{{$t_po->id}}/lihat_detail_po/destroy_po" method="GET">
+        {{csrf_field()}} 
+        <button type="submit" class="btn btn-danger btn-lg btn-block">Hapus PO</button>
+        </form>
+        </div>
+    </div>
+</div>
+
 </br>
 <div class="container-sm mb-3">
 <a href="{{ url()->previous() }}" class="btn btn-secondary btn-lg btn-block">Kembali</a>

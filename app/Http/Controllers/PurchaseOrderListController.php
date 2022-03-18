@@ -204,4 +204,20 @@ class PurchaseOrderListController extends Controller
 
         return redirect('/nav/list_purchase_order/'.$id_t_po.'/lihat_detail_po')->with('input_succeed','Sent!');
     }
+
+    public function destroy_po($id)
+    {
+        //destroy po
+        DB::table('t_po')
+        ->where('id','=', $id)
+        ->delete();
+
+        //destroy detail
+        DB::table('t_po_detail')
+        ->where('id_po','=', $id)
+        ->delete();
+
+        return redirect('/nav/list_purchase_order')
+        ->with('destroy_succeed','Deleted!');
+    }
 }

@@ -44,7 +44,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/{id}/lihat_detail_po/store_purchase_order', $controller.'@store_purchase_order'); //create
         Route::get('/{id}/lihat_detail_po/destroy_detail', $controller.'@destroy_detail'); //destroy detail  
         Route::get('/{id}/lihat_detail_po/edit_detail', $controller.'@edit_detail'); //edit detail
-        Route::post('/{id}/lihat_detail_po/update_detail', $controller.'@update_detail'); //update detail  
+        Route::post('/{id}/lihat_detail_po/update_detail', $controller.'@update_detail'); //update detail 
+        Route::get('/{id}/lihat_detail_po/destroy_po', $controller.'@destroy_po'); //destroy PO 
     });
 
     Route::get('nav/print_out/{id}/cetak_po', 'PrintOutController@cetak_po');

@@ -6,6 +6,13 @@
 </script>
 <!--end success alert-->
 
+@if(session('destroy_succeed'))
+  <div class = "alert alert-success alert-dismissible fade show" role="alert">
+  Deleted!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@endif
+
 <form class="form" action="/nav/list_purchase_order/store_purchase_order/filter_tanggal" method="GET">
     <div class="form-group row">
         <label for="" class="col-sm-2 col-form-label">Tanggal PO</label>

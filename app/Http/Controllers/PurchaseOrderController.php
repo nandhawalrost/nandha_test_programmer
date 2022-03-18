@@ -251,4 +251,10 @@ class PurchaseOrderController extends Controller
 
         return redirect('/nav/purchase_order');
     }
+
+    public function destroy_po($id)
+    {
+        dd($id);
+        
+    }
 }
