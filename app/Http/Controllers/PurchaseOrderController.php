@@ -232,7 +232,7 @@ class PurchaseOrderController extends Controller
         return redirect('/nav/purchase_order')->with('input_succeed','Sent!');
     }
 
-    public function buat_purchase_order_baru(Request $request, $id_po)
+    public function buat_purchase_order_baru(Request $request)
     {
         //select t_po by user id
         $id_t_po_terakhir = DB::table('t_po')

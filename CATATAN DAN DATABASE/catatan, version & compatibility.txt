@@ -1,0 +1,9 @@
+==ID untuk autentikasi========================
+untuk login
+email    = admin@app.com
+password = password
+
+==Versi PHP & Laravel=========================
+PHP 8.0.15 (cli) (built: Jan 18 2022 13:47:36)
+Laravel 7
+==============================================
